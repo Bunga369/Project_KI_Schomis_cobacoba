@@ -46,7 +46,7 @@ Klik "Masuk" di welcome page → klik "Buat akun baru" → isi form → otomatis
 ## Struktur Folder
 
 ```
-sekolah-app/
+PROJECT_KI_FIKS/
 ├── server.js              -> server utama, semua route didaftarkan di sini
 ├── db.js                  -> koneksi ke MySQL
 ├── database.sql           -> script bikin database & tabel
