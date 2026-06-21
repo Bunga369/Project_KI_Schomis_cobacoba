@@ -10,7 +10,7 @@ Website Absensi & Nilai Sekolah, dibuat dengan Node.js + Express + MySQL.
 4. **Manajemen Kelas** (`/manajemen-kelas.html`) - CRUD data kelas (tambah/edit/hapus), klik nama kelas untuk lihat siswanya
 5. **Manajemen Siswa** (`/manajemen-siswa.html`) - CRUD data siswa per kelas, ubah status hadir/tidak hadir per tanggal (klik badge status)
 6. **Akademik** (`/akademik.html`) - lihat & edit nilai siswa (Matematika, B.Inggris, B.Indonesia), rata-rata otomatis, ganti kelas lewat dropdown
-7. **Kenaikan Kelas** (`/kenaikan-kelas.html`) - status Lulus/Tidak Lulus dihitung otomatis berdasarkan KKM (saat ini 75, bisa diubah di `routes/nilai.js`)
+7. **Kenaikan Kelas** (`/kenaikan-kelas.html`) - status Lulus/Tidak Lulus dihitung otomatis berdasarkan KKM (saat ini 79, bisa diubah di `routes/nilai.js`)
 8. **Keluar** - logout, balik ke Welcome Page
 
 ## Cara Menjalankan
