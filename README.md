@@ -71,19 +71,3 @@ sekolah-app/
     └── js/                  -> 1 file JS per halaman + sidebar.js (dipakai bersama)
 ```
 
-## Yang Masih Perlu Disesuaikan
-
-- **Logo**: ganti `public/img/logo.svg` dengan logo asli sekolah kamu (PNG/JPG juga bisa, tinggal ganti nama file & extension di HTML)
-- **Warna/Font**: kalau desain Figma kamu sedikit berbeda, sesuaikan variabel warna di `public/css/style.css` bagian `:root`
-- **KKM**: defaultnya 75, bisa diubah di `routes/nilai.js` (cari variabel `KKM`)
-- **Mata pelajaran**: saat ini hardcode 3 mapel (Matematika, B.Inggris, B.Indonesia) sesuai Figma. Kalau mau tambah mapel lain, perlu ubah struktur tabel `nilai` di database dan sesuaikan route + halaman akademik.
-
-## Tips untuk Kerja Kelompok
-
-- Gunakan **Git** untuk kerja bareng, supaya gak saling tabrak kode. Push project ini ke GitHub (privat), tiap anggota clone dan kerja di branch masing-masing.
-- **JANGAN** upload file `.env` ke GitHub (isi kredensial database). Buat file `.gitignore` dengan isi minimal:
-  ```
-  node_modules/
-  .env
-  ```
-- Bagi tugas per halaman/fitur, karena strukturnya sudah dipisah per file (kelas, siswa, nilai), masing-masing bisa kerja di bagian berbeda tanpa banyak konflik.
