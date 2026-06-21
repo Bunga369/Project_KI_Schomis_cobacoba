@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Kelas - SCHOMIS</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>CLASSES</h1>
+                <button class="btn-tambah" id="btnTambahKelas">+ Tambah Kelas</button>
+            </div>
+
+            <div class="panel">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Kelas</th>
+                            <th>Wali Kelas</th>
+                            <th>Siswa</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelKelas">
+                        <!-- Diisi otomatis lewat JavaScript -->
+                    </tbody>
+                </table>
+                <p class="empty-state" id="emptyState" style="display:none;">Belum ada kelas. Klik "+ Tambah Kelas" untuk menambahkan.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL TAMBAH / EDIT KELAS -->
+    <div class="modal-overlay" id="modalKelas">
+        <div class="modal-box">
+            <h2 id="modalTitle">Tambah Kelas</h2>
+            <form id="formKelas">
+                <input type="hidden" id="kelasId">
+                <div class="form-group">
+                    <label for="namaKelas">Nama Kelas</label>
+                    <input type="text" id="namaKelas" placeholder="Contoh: X IPA 1" required>
+                </div>
+                <div class="form-group">
+                    <label for="waliKelas">Nama Wali Kelas</label>
+                    <input type="text" id="waliKelas" placeholder="Contoh: Budi Santoso S.Pd" required>
+                </div>
+                <p class="message error" id="pesanModal"></p>
+                <div class="modal-actions">
+                    <button type="button" class="btn-batal" id="btnBatalModal">Batal</button>
+                    <button type="submit" class="btn-simpan">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/manajemen-kelas.js"></script>
+    <script>renderSidebar('kelas');</script>
+</body>
+</html>

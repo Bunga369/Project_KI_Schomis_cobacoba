@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Siswa - SCHOMIS</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>CLASSES</h1>
+                <span class="breadcrumb-kelas" id="namaKelasLabel">-</span>
+            </div>
+
+            <div class="panel">
+                <div class="panel-toolbar">
+                    <input type="date" id="filterTanggal">
+                    <button class="btn-tambah" id="btnTambahSiswa">+ Tambah Siswa</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>NIS</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelSiswa"></tbody>
+                </table>
+                <p class="empty-state" id="emptyState" style="display:none;">Belum ada siswa di kelas ini. Klik "+ Tambah Siswa" untuk menambahkan.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL TAMBAH / EDIT SISWA -->
+    <div class="modal-overlay" id="modalSiswa">
+        <div class="modal-box">
+            <h2 id="modalTitle">Tambah Siswa</h2>
+            <form id="formSiswa">
+                <input type="hidden" id="siswaId">
+                <div class="modal-grid">
+                    <div class="form-group">
+                        <label for="nis">NIS</label>
+                        <input type="text" id="nis" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="namaSiswa">Nama Siswa</label>
+                        <input type="text" id="namaSiswa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggalLahir">Tanggal Lahir</label>
+                        <input type="date" id="tanggalLahir">
+                    </div>
+                    <div class="form-group">
+                        <label for="jenisKelamin">Jenis Kelamin</label>
+                        <select id="jenisKelamin" required>
+                            <option value="">Pilih</option>
+                            <option value="Laki Laki">Laki Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="message error" id="pesanModal"></p>
+                <div class="modal-actions">
+                    <button type="button" class="btn-batal" id="btnBatalModal">Batal</button>
+                    <button type="submit" class="btn-simpan">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/manajemen-siswa.js"></script>
+    <script>renderSidebar('siswa');</script>
+</body>
+</html>

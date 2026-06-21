@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenaikan Kelas - SCHOMIS</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>CLASSES</h1>
+                <span class="breadcrumb-kelas" id="namaKelasLabel">-</span>
+            </div>
+
+            <div class="panel">
+                <div class="panel-toolbar">
+                    <h2 style="font-size:1.1rem; color:#10133f;">Kenaikan Kelas</h2>
+                    <span style="font-size:0.85rem; color:#777;">KKM (Nilai minimum lulus): <strong id="kkmLabel">75</strong></span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NIS</th>
+                            <th>Nama</th>
+                            <th>Nilai Rata Rata</th>
+                            <th>Status Kenaikan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelKenaikan"></tbody>
+                </table>
+                <p class="empty-state" id="emptyState" style="display:none;">Belum ada data siswa di kelas ini.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/kenaikan-kelas.js"></script>
+    <script>renderSidebar('akademik');</script>
+</body>
+</html>
