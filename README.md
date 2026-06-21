@@ -29,9 +29,9 @@ Sesuaikan dengan kredensial MySQL kamu:
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=
-DB_NAME=sekolah_app
+DB_NAME=DB_NAME=SCHOMIS
 PORT=3000
-SESSION_SECRET=ganti_dengan_teks_acak
+SESSION_SECRET=kunciRahasiaSekolahNusantara2026xyz
 ```
 
 ### 4. Jalankan server
