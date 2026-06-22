@@ -1,73 +1,23 @@
-# SCHOMIS - School Management Information System
+# Cara Jalankan 
 
-Website Absensi & Nilai Sekolah, dibuat dengan Node.js + Express + MySQL.
+1. Install Node.js (jika belum ada): https://nodejs.org
+2. Install XAMPP (jika belum ada): https://www.apachefriends.org
+3. Buka XAMPP Control Panel → Start MySQL
+4. Buka `http://localhost/phpmyadmin` → tab SQL → paste isi `database.sql` → Go
+5. Copy `.env.example` → rename jadi `.env`
+6. Buka terminal di folder project:
+   ```
+   npm install
+   npm run dev
+   ```
+7. Buka browser: `http://localhost:3000`
+8. Klik "Buat akun baru" untuk membuat akun pertama
 
-## Fitur
+## Jika "Terjadi kesalahan server"
+→ MySQL belum menyala. Ulangi langkah 3.
 
-1. **Welcome Page** (`/index.html`) - halaman pembuka, klik "Masuk" untuk ke halaman login
-2. **Login** (`/login.html`) - wajib isi username & password
-3. **Register** (`/register.html`) - buat akun baru, setelah berhasil otomatis login
-4. **Manajemen Kelas** (`/manajemen-kelas.html`) - CRUD data kelas (tambah/edit/hapus), klik nama kelas untuk lihat siswanya
-5. **Manajemen Siswa** (`/manajemen-siswa.html`) - CRUD data siswa per kelas, ubah status hadir/tidak hadir per tanggal (klik badge status)
-6. **Akademik** (`/akademik.html`) - lihat & edit nilai siswa (Matematika, B.Inggris, B.Indonesia), rata-rata otomatis, ganti kelas lewat dropdown
-7. **Kenaikan Kelas** (`/kenaikan-kelas.html`) - status Lulus/Tidak Lulus dihitung otomatis berdasarkan KKM (saat ini 79, bisa diubah di `routes/nilai.js`)
-8. **Keluar** - logout, balik ke Welcome Page
+## Jika `npm run dev` error EADDRINUSE
+→ Jalankan: `taskkill /F /IM node.exe`, lalu ulangi langkah 6.
 
-## Cara Menjalankan
-
-### 1. Install dependencies
-```bash
-npm install
-```
-
-### 2. Siapkan database
-Buka MySQL (lewat phpMyAdmin, Workbench, atau terminal), lalu jalankan seluruh isi file `database.sql`. Ini akan membuat database `sekolah_app` beserta semua tabelnya.
-
-### 3. Atur file `.env`
-Sesuaikan dengan kredensial MySQL kamu:
-```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=
-DB_NAME=DB_NAME=SCHOMIS
-PORT=3000
-SESSION_SECRET=kunciRahasiaSekolahNusantara2026xyz
-```
-
-### 4. Jalankan server
-```bash
-npm run dev
-```
-Lalu buka browser ke: **http://localhost:3000**
-
-### 5. Buat akun pertama
-Klik "Masuk" di welcome page → klik "Buat akun baru" → isi form → otomatis login dan masuk ke Manajemen Kelas.
-
-## Struktur Folder
-
-```
-PROJECT_KI_FIKS/
-├── server.js              -> server utama, semua route didaftarkan di sini
-├── db.js                  -> koneksi ke MySQL
-├── database.sql           -> script bikin database & tabel
-├── .env                   -> konfigurasi (jangan upload ke GitHub!)
-├── middleware/
-│   └── auth.js            -> cek status login (untuk halaman & API)
-├── routes/
-│   ├── auth.js             -> login, register, logout
-│   ├── kelas.js             -> CRUD kelas
-│   ├── siswa.js             -> CRUD siswa + absensi per tanggal
-│   └── nilai.js             -> nilai per mapel + kenaikan kelas
-└── public/                 -> semua yang dilihat user (HTML, CSS, JS, gambar)
-    ├── index.html           -> Welcome page
-    ├── login.html
-    ├── register.html
-    ├── manajemen-kelas.html
-    ├── manajemen-siswa.html
-    ├── akademik.html
-    ├── kenaikan-kelas.html
-    ├── css/style.css
-    ├── img/logo.svg
-    └── js/                  -> 1 file JS per halaman + sidebar.js (dipakai bersama)
-```
-
+## Jika npm error "running scripts is disabled"
+→ Gunakan Command Prompt, bukan PowerShell.
